@@ -10,7 +10,8 @@ namespace MarCommEvents.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+
+            return View(DAL.Event.Events());
         }
 
         public ActionResult About()
