@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -16,6 +17,16 @@ namespace MarCommEvents
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            // setup db
+            if (ConfigurationManager.ConnectionStrings.Count > 0 && ConfigurationManager.ConnectionStrings["default"] != null)
+            {
+                DAL.DB.InitProd(ConfigurationManager.ConnectionStrings["default"].ConnectionString);
+            }
+            else
+            {
+                DAL.DB.InitDev(); 
+            }
         }
     }
 }

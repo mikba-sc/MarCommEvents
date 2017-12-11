@@ -144,6 +144,13 @@
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAL\Event.cs" />
+    <Compile Include="DAL\DB.cs" />
+    <Compile Include="DAL\Init\LDB\DB.cs" />
+    <Compile Include="DAL\Init\LDB\seed.cs" />
+    <Compile Include="DAL\Init\LDB\Sprocs.cs" />
+    <Compile Include="DAL\Init\LDB\Tables.cs" />
+    <Compile Include="DAL\Init\LocalDB.cs" />
+    <Compile Include="DAL\UtilCalls.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
