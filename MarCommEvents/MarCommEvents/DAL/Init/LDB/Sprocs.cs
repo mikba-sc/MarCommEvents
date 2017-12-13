@@ -11,7 +11,27 @@ namespace MarCommEvents.DAL.Init.LDB
         public static void Init(string connstr)
         {
             upsertEvent(connstr);
+            listEvents(connstr);
+        }
 
+        private static void listEvents(string connstr)
+        {
+            string createSql = @"CREATE PROCEDURE  [dbo].[spListEvents] (
+	@from datetime,
+	@to datetime 
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+
+	SELECT * from Events where Starts >= @from and Ends <= @to;
+END
+
+GO
+";
+
+            DAL.UtilCalls.exNonQuery(connstr, createSql);
         }
 
         private static void upsertEvent(string connstr)

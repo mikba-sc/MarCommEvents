@@ -21,11 +21,14 @@ namespace MarCommEvents
             // setup db
             if (ConfigurationManager.ConnectionStrings.Count > 0 && ConfigurationManager.ConnectionStrings["default"] != null)
             {
-                DAL.DB.InitProd(ConfigurationManager.ConnectionStrings["default"].ConnectionString);
+                ConnectionStringSettings c = ConfigurationManager.ConnectionStrings["default"];
+                DAL.DB.InitProd(c.ConnectionString);
+//                DAL.Init.LDB.seed.LoadData();
             }
             else
             {
-                DAL.DB.InitDev(); 
+                DAL.DB.InitDev();
+                DAL.Init.LDB.seed.LoadData();
             }
         }
     }

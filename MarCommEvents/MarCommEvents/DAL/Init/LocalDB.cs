@@ -21,7 +21,8 @@ namespace MarCommEvents.DAL.Init
         {
             string connstr = LDB.DB.init(); // @"Integrated Security=SSPI;Data Source=(LocalDb)\MSSQLLocalDB;";
             LDB.Tables.Init(connstr);
-
+            LDB.Sprocs.Init(connstr);
+//            LDB.seed.LoadData(connstr);
             return connstr;
         }
     }

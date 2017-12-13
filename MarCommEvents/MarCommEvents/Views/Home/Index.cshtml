@@ -5,8 +5,10 @@
 
 
 <div class="row">
-    @foreach(MarCommEvents.Models.EventModel e in Model)
+    @foreach (MarCommEvents.Models.EventModel e in Model)
     {
+        <div>@e.Contact</div>
+        <div>@e.Description</div>
         <div>@e.Title</div>
 
     }
