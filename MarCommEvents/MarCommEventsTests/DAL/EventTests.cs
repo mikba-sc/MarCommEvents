@@ -24,5 +24,11 @@ namespace MarCommEvents.DAL.Tests
             Assert.IsTrue(m.Count > 0);
 
         }
+
+        [TestMethod()]
+        public void PutEventTest()
+        {
+            Assert.Fail();
+        }
     }
 }

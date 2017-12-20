@@ -13,13 +13,16 @@ namespace MarCommEvents.DAL
     {
         public static List<EventModel> Events()
         {
+            return Events(DateTime.Now.AddDays(-1), DateTime.Now.AddDays(30));
+        }
 
+        public static List<EventModel> Events(DateTime from, DateTime to)
+        {
             List<SqlParameter> parms = new List<SqlParameter>();
-            parms.Add(new SqlParameter("From", DateTime.Now.AddDays(-1)));
-            parms.Add(new SqlParameter("To", DateTime.Now.AddDays(30)));
+            parms.Add(new SqlParameter("From", from));
+            parms.Add(new SqlParameter("To", to));
 
             return UtilCalls.CallSprocTypedList<EventModel>("spListEvents", parms);
-
         }
 
         public static void PutEvent(EventModel e)

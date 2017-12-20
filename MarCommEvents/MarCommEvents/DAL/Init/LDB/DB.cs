@@ -51,6 +51,7 @@ namespace MarCommEvents.DAL.Init.LDB
             }
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2100:Review SQL queries for security vulnerabilities")]
         public static bool CreateDatabase(string dbName, string dbFileName)
         {
             try
@@ -77,6 +78,7 @@ namespace MarCommEvents.DAL.Init.LDB
 
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2100:Review SQL queries for security vulnerabilities")]
         public static bool DetachDatabase(string dbName)
         {
             try

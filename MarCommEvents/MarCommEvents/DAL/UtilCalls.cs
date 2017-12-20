@@ -11,6 +11,7 @@ namespace MarCommEvents.DAL
 {
     public class UtilCalls
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2100:Review SQL queries for security vulnerabilities")]
         public static void exNonQuery(string connstr, string createSql)
         {
             string[] sep = new string[] { "GO" };
@@ -33,6 +34,7 @@ namespace MarCommEvents.DAL
             }
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2100:Review SQL queries for security vulnerabilities")]
         public static void CallSprocNonQuery(string sprocname, List<SqlParameter> parms)
         {
             //            using (var conn = new SqlConnection("Data Source = PDWWAT01; Initial Catalog = MarCommEvents; User Id = MarCommSystem; Password = testy; ")) // DAL.DB.ConnStr()))
@@ -53,10 +55,11 @@ namespace MarCommEvents.DAL
         }
 
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2100:Review SQL queries for security vulnerabilities")]
         internal static List<T> CallSprocTypedList<T>(string sprocname, List<SqlParameter> parms)
         {
             List<T> ret = new List<T>();
-            
+
             using (var conn = new SqlConnection(DAL.DB.ConnStr()))
             {
                 conn.Open();
@@ -71,20 +74,51 @@ namespace MarCommEvents.DAL
 
                     SqlDataReader r = command.ExecuteReader();
 
-                    while(r.Read())
+                    while (r.Read())
                     {
                         List<object> args = new List<object>();
                         args.Add(r);
                         Type[] t = new Type[] { typeof(SqlDataReader) };
-                        MethodInfo m = typeof(T).GetMethod("FromSqlRow",BindingFlags.Static | BindingFlags.Public);
+                        MethodInfo m = typeof(T).GetMethod("FromSqlRow", BindingFlags.Static | BindingFlags.Public);
                         object o = Activator.CreateInstance(typeof(T), null);
                         object tmp = m.Invoke(o, args.ToArray());
                         ret.Add((T)tmp);
-                    }   
+                    }
                 }
             }
 
             return ret;
+        }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2100:Review SQL queries for security vulnerabilities")]
+        internal static T CallSprocTypedObject<T>(string sprocname, List<SqlParameter> parms)
+        {
+            using (var conn = new SqlConnection(DAL.DB.ConnStr()))
+            {
+                conn.Open();
+                using (var command = new SqlCommand(sprocname, conn))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    foreach (SqlParameter p in parms)
+                    {
+                        command.Parameters.Add(p);
+                    }
+
+                    SqlDataReader r = command.ExecuteReader();
+
+
+                    // todo refactor this into a util func
+                    r.Read();
+                    List<object> args = new List<object>();
+                    args.Add(r);
+                    Type[] t = new Type[] { typeof(SqlDataReader) };
+                    MethodInfo m = typeof(T).GetMethod("FromSqlRow", BindingFlags.Static | BindingFlags.Public);
+                    object o = Activator.CreateInstance(typeof(T), null);
+                    object tmp = m.Invoke(o, args.ToArray());
+                    return (T)tmp;
+                }
+            }
         }
     }
 }

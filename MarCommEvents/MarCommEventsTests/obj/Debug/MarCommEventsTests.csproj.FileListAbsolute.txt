@@ -55,5 +55,3 @@ C:\Users\mbarta\Documents\GITREPOS\MarCommEvents\MarCommEvents\MarCommEventsTest
 C:\Users\mbarta\Documents\GITREPOS\MarCommEvents\MarCommEvents\MarCommEventsTests\bin\Debug\roslyn\vbc.rsp
 C:\Users\mbarta\Documents\GITREPOS\MarCommEvents\MarCommEvents\MarCommEventsTests\bin\Debug\roslyn\VBCSCompiler.exe
 C:\Users\mbarta\Documents\GITREPOS\MarCommEvents\MarCommEvents\MarCommEventsTests\bin\Debug\roslyn\VBCSCompiler.exe.config
-C:\Users\mbarta\Documents\GITREPOS\MarCommEvents\MarCommEvents\MarCommEventsTests\bin\Debug\MarCommEventsTests.dll.CodeAnalysisLog.xml
-C:\Users\mbarta\Documents\GITREPOS\MarCommEvents\MarCommEvents\MarCommEventsTests\bin\Debug\MarCommEventsTests.dll.lastcodeanalysissucceeded
