@@ -20,6 +20,9 @@ namespace MarCommEvents.DAL.Tests
 
             List<EventModel> m = DAL.Event.Events();
 
+            Assert.IsNotNull(m);
+            Assert.IsTrue(m.Count > 0);
+
         }
     }
 }
