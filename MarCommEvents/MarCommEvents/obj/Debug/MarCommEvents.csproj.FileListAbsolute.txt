@@ -64,4 +64,3 @@ C:\Users\mbarta\Documents\GITREPOS\MarCommEvents\MarCommEvents\MarCommEvents\bin
 C:\Users\mbarta\Documents\GITREPOS\MarCommEvents\MarCommEvents\MarCommEvents\bin\Microsoft.AI.Web.xml
 C:\Users\mbarta\Documents\GITREPOS\MarCommEvents\MarCommEvents\MarCommEvents\obj\Debug\MarCommEvents.dll
 C:\Users\mbarta\Documents\GITREPOS\MarCommEvents\MarCommEvents\MarCommEvents\obj\Debug\MarCommEvents.pdb
-C:\Users\mbarta\Documents\GITREPOS\MarCommEvents\MarCommEvents\MarCommEvents\obj\Debug\MarCommEvents.csprojResolveAssemblyReference.cache

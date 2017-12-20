@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarCommEvents", "MarCommEvents\MarCommEvents.csproj", "{1BC9877A-8C88-4D4C-A072-29BA472B9667}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarCommEventsTests", "MarCommEventsTests\MarCommEventsTests.csproj", "{3DECEDCC-A3E8-4AC3-B236-76256191F93D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{1BC9877A-8C88-4D4C-A072-29BA472B9667}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BC9877A-8C88-4D4C-A072-29BA472B9667}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BC9877A-8C88-4D4C-A072-29BA472B9667}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DECEDCC-A3E8-4AC3-B236-76256191F93D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DECEDCC-A3E8-4AC3-B236-76256191F93D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DECEDCC-A3E8-4AC3-B236-76256191F93D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DECEDCC-A3E8-4AC3-B236-76256191F93D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

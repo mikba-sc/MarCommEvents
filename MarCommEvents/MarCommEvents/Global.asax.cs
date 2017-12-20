@@ -28,7 +28,6 @@ namespace MarCommEvents
             else
             {
                 DAL.DB.InitDev();
-                DAL.Init.LDB.seed.LoadData();
             }
         }
     }

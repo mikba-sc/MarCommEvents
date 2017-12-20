@@ -18,10 +18,14 @@ namespace MarCommEvents.DAL
 
             return _connstr;
         }
-            
+
         public static void InitDev()
         {
-           _connstr = Init.LocalDB.Hydrate();
+            if (string.IsNullOrEmpty(_connstr))
+            {
+                _connstr = Init.LocalDB.Hydrate();
+                Init.LDB.seed.LoadData();
+            }
         }
 
         public static void InitProd(string connstr)
